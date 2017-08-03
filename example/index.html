@@ -4,28 +4,12 @@
   <meta charset="UTF-8">
   <title>play-with-browserify-bundle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
-  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js"></script>
+  <script src="https://unpkg.com/react@15.6.0/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15.6.0/dist/react-dom.min.js"></script>
   <script src="example/components.js"></script>
+  <script src="example/bundle.js"></script>
 </head>
 <body>
 <div id="app-container"></div>
-<script>
-  const update = () => {
-    // import exported component
-    const HelloWorld = window.MyComponents.HelloWorld.default
-
-    ReactDOM.render(
-      React.createElement(HelloWorld, {toWhat: 'World'}, null),
-      document.getElementById('app-container')
-    );
-  }
-
-  if (document.readyState === 'complete' || document.readyState !== 'loading') {
-    update()
-  } else {
-    document.addEventListener('DOMContentLoaded', update)
-  }
-</script>
 </body>
 </html>

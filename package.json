@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_PATH=./ browserifyinc webapp/index.js -s MyComponents -t babelify --extensions=.js -v | NODE_ENV=production loose-envify | uglifyjs --compress 'dead_code, drop_console' > ./example/components.js"
+    "build": "npm run build-components && npm run build-webapp",
+    "build-components": "NODE_PATH=./ browserifyinc components/index.js -s MyComponents -t babelify --extensions=.js -v | NODE_ENV=production loose-envify | uglifyjs --compress 'dead_code, drop_console' > ./example/components.js",
+    "build-webapp": "NODE_PATH=./ browserifyinc webapp/index.js -t babelify --extensions=.js -v | NODE_ENV=production loose-envify | uglifyjs --compress 'dead_code, drop_console' > ./example/bundle.js"
   },
   "repository": {
     "type": "git",

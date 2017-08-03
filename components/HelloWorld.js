@@ -1,10 +1,10 @@
-import React from 'react'
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import Paper from 'material-ui/Paper'
 import FlatButton from 'material-ui/FlatButton'
+
+const React = window.React
 
 export default () => {
   return (
@@ -20,7 +20,7 @@ export default () => {
           alignItems: 'center'
         }}
       >
-        <FlatButton label="Button" />
+        <FlatButton label="Click" />
       </Paper>
     </MuiThemeProvider>
   )
